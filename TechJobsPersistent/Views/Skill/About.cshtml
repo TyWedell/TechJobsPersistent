@@ -2,18 +2,26 @@
 
 @if (Model.Count == 0)
 {
-    <h1>No jobs with the given skill!</h1>
+    <br />
+    <div class="card">
+        <h1 class="display-4 text-center card-header text-danger">No jobs with the given skill!</h1>
+    </div>
+    <br />
 }
 else
 {
-    <h1>Jobs with the Skill: @Model[0].Skill.Name</h1>
-    <p>Skill Description: @Model[0].Skill.Description</p>
-
-    <ul>
-        @foreach (var jobSkill in Model)
-        {
-            <li>@jobSkill.Job.Name</li>
-        }
-    </ul>
-
+    <br />
+    <br />
+    <div class="card border border-warning m-2 " style="width: 30rem;">
+        <h4 class="card-header bg-secondary text-light"><span>Jobs with the Skill: </span>@Model[0].Skill.Name</h4>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><span>Skill Description: @Model[0].Skill.Description</span></li>
+        </ul>
+        <ul class="list-group list-group-flush">
+            @foreach (var jobSkill in Model)
+            {
+                <li class="list-group-item">@jobSkill.Job.Name</li>
+            }
+        </ul>
+    </div>
 }

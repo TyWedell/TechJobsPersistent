@@ -1,16 +1,18 @@
 ﻿@model TechJobsPersistent.Models.Skill
 
-<h1>Add New Skill</h1>
+<br />
+<div>
+    <h1>Add New Skill</h1>
+</div>
+<br />
 
 <form asp-controller="Skill" asp-action="Add" method="post">
     <div class="form-group">
-        <label asp-for="Name">Skill Name</label>
-        <input asp-for="Name" />
+        <input asp-for="Name" placeholder="Skill Name" />
         <span asp-validation-for="Name"></span>
     </div>
     <div class="form-group">
-        <label asp-for="Description">Skill Description</label>
-        <input asp-for="Description" />
+        <input asp-for="Description" placeholder="Skill Description" />
         <span asp-validation-for="Description"></span>
     </div>
     <input type="submit" value="Submit" />

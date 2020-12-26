@@ -39,17 +39,19 @@ namespace TechJobsPersistent.Controllers
         {
             if (ModelState.IsValid)
             {
-                Employer newEmployer = new Employer
+                if (context.Employers.Where(x => x.Name == addEmployerViewModel.Name).ToList().Count == 0)
                 {
-                    Name = addEmployerViewModel.Name,
-                    Location = addEmployerViewModel.Location
-                };
-
-                context.Employers.Add(newEmployer);
-                context.SaveChanges();
-            
+                    Employer theEmployer = new Employer
+                    {
+                        Name = addEmployerViewModel.Name,
+                        Location = addEmployerViewModel.Location
+                    };
+                    context.Employers.Add(theEmployer);
+                    context.SaveChanges();
+                }
+                return Redirect("Index");
             }
-            return View();
+            return View("Add", addEmployerViewModel);
         }
 
         public IActionResult About(int id)

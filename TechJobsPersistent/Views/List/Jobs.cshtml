@@ -2,20 +2,20 @@
 
     <h1>@ViewBag.title</h1>
 
-    <table>
+    <table style="border:1px solid black">
         <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Employer</th>
-            <th>Skills</th>
+            <th style="padding: 10px">ID</th>
+            <th style="padding: 10px">Name</th>
+            <th style="padding: 10px">Employer</th>
+            <th style="padding: 10px">Skills</th>
         </tr>
         @foreach (var job in ViewBag.jobs)
         {
             <tr>
-                <td>@job.JobId</td>
-                <td>@job.Name</td>
-                <td>@job.EmployerName</td>
-                <td>@job.SkillText</td>
+                <td style="padding: 10px">@job.JobId</td>
+                <td style="padding: 10px">@job.Name</td>
+                <td style="padding: 10px">@job.EmployerName</td>
+                <td style="padding: 10px">@job.SkillText</td>
             </tr>
         }
     </table>

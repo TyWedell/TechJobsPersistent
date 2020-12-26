@@ -28,16 +28,20 @@
 
     @if (ViewBag.jobs != null)
     {
-        <table>
+        <table style="border:1px solid black">
+            <tr>
+                <th style="padding: 10px">ID</th>
+                <th style="padding: 10px">Name</th>
+                <th style="padding: 10px">Employer</th>
+                <th style="padding: 10px">Skills</th>
+            </tr>
             @foreach (var job in ViewBag.jobs)
             {
                 <tr>
-                    <td>
-                        <p>ID: @job.JobId</p>
-                        <p>Name: @job.Name</p>
-                        <p>Employer: @job.EmployerName</p>
-                        <p>Location: @job.SkillText</p>
-                    </td>
+                    <td style="padding: 10px">@job.JobId</td>
+                    <td style="padding: 10px">@job.Name</td>
+                    <td style="padding: 10px">@job.EmployerName</td>
+                    <td style="padding: 10px">@job.SkillText</td>
                 </tr>
             }
         </table>

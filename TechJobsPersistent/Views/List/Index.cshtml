@@ -1,18 +1,20 @@
-﻿<div class="container body-content">
-    <h1>@ViewBag.title</h1>
-    <h2 class="centered">View Jobs By Category</h2>
+﻿<br />
+<div style="text-align:center">
+    <h1>View Jobs By Category</h1>
 </div>
-
-<table class="centeredTable">
-    <tr>
-        @foreach (var column in ViewBag.columns)
-        {
-            @if (column.Key != "all")
+<br />
+<table class="table table-striped">
+    <thead class="thead-dark">
+        <tr>
+            @foreach (var column in ViewBag.columns)
             {
-                <th>@column.Value</th>
+                @if (column.Key != "all")
+                {
+                    <th>@column.Value</th>
+                }
             }
-        }
-    </tr>
+        </tr>
+    </thead>
     <tr>
         @foreach (var category in ViewBag.tableChoices)
         {
@@ -36,7 +38,6 @@
                             </li>
                         }
                     }
-
                 </ul>
             </td>
         }
